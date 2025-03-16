@@ -5,8 +5,10 @@ import { Platform } from 'react-native';
 import { HapticTab } from '@/components/HapticTab';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+
+import {ArrowLeftRight, Layers, UserRound} from 'lucide-react-native'
+import {Colors} from "@/shared/styles";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -14,8 +16,8 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
+        tabBarActiveTintColor: Colors.textColor,
+        // headerShown: false,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
@@ -29,15 +31,22 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Pour toi',
+          tabBarIcon: ({ color }) => <Layers size={28} color={color} />,
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="sell"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Vendre',
+          tabBarIcon: ({ color }) => <ArrowLeftRight size={28} color={color} />,
+        }}
+      />
+        <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Compte',
+          tabBarIcon: ({ color }) => <UserRound size={28} color={color} />,
         }}
       />
     </Tabs>

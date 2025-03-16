@@ -14,7 +14,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#FFD402"
       }
     },
     "web": {
@@ -27,11 +27,27 @@
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/splash.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#FFD402"
         }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            
+            "./assets/fonts/Poppins-Bold.ttf",
+            "./assets/fonts/Poppins-Light.ttf",
+            "./assets/fonts/Poppins-LightItalic.ttf",
+            "./assets/fonts/Poppins-Medium.ttf",
+            "./assets/fonts/Poppins-Regular.ttf",
+            "./assets/fonts/Poppins-SemiBold.ttf",
+            "./assets/fonts/Poppins-Thin.ttf"
+          ]
+        }
+
       ]
     ],
     "experiments": {
