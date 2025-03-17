@@ -54,6 +54,19 @@ export default function RootLayout() {
                   </Pressable>
               )
         }} />
+          <Stack.Screen
+            name={'category/index'}
+            options={{
+              title: 'Categories',
+              presentation: 'modal',
+              headerTitleAlign: 'center',
+              headerShadowVisible: false,
+              headerLeft: ()=>(
+                  <Pressable onPress={()=>router.back()}>
+                    <X color={Colors.textColor}/>
+                  </Pressable>
+              )
+        }} />
       </Stack>
       <StatusBar style="auto" />
     </>

@@ -7,7 +7,7 @@ export default function SearchComponent(){
         <View style={styles.container}>
             <TextInput style={styles.input} placeholder={'iPhone 11, Macbook, Samsung,...'}/>
 
-            <Link href={'/'}>
+            <Link href={'/category'}>
                 <Text>Catégiries</Text>
             </Link>
 

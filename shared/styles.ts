@@ -21,8 +21,8 @@ const Fonts = {
 }
 
 const Dimension = {
-    inputHeight: 40,
-    buttonHeight: 50,
+    inputHeight: 50,
+    buttonHeight: 60,
 }
 
 export { Colors, Spacings, Fonts, Dimension };
