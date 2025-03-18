@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
         gap: 21,
         alignItems: 'center',
         paddingVertical: 30,
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        padding: Spacings.containerPadding,
     },
     logoContainer: {
         flexDirection: 'row', 

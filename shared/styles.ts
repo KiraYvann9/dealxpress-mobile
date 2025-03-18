@@ -7,6 +7,8 @@ const Colors = {
     bgColor: '#FAFAFA',
     borderColor: '#D9D9D9',
     inputBgColor: 'rgba(217, 217, 217, .25)',
+    red: 'rgb(255, 66, 66)',
+    green: '#13A931',
 }
 
 const Spacings = {

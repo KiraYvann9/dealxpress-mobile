@@ -1,15 +1,17 @@
 import {Pressable, StyleSheet, Text, TextInput, View} from "react-native";
 import {Colors, Dimension, Spacings} from "@/shared/styles";
-import {Link} from "expo-router";
+import {Link, router} from "expo-router";
+import {SlidersHorizontal} from "lucide-react-native";
 
 export default function SearchComponent(){
     return (
         <View style={styles.container}>
             <TextInput style={styles.input} placeholder={'iPhone 11, Macbook, Samsung,...'}/>
 
-            <Link href={'/category'}>
-                <Text>Catégiries</Text>
-            </Link>
+            <Pressable onPress={()=>router.push('/category')} style={styles.filter}>
+                <SlidersHorizontal size={24} color={'#fff'}/>
+                <Text style={{color: '#fff'}}>Filtre</Text>
+            </Pressable>
 
         </View>
     )
@@ -19,7 +21,7 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         flexDirection: 'row',
-        gap: 20,
+        gap: 5,
         alignItems: 'center'
     },
     input: {
@@ -30,5 +32,14 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         flex: 1,
         paddingHorizontal: Spacings.padding,
+    },
+    filter:{
+        flexDirection: 'row',
+        gap: Spacings.padding,
+        alignItems: 'center',
+        padding: Spacings.padding,
+        height : Dimension.inputHeight,
+        backgroundColor: Colors.textColor,
+        borderRadius: 4
     }
 })

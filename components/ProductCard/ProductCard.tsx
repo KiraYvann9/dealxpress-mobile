@@ -1,5 +1,5 @@
 import {Colors, Fonts, Spacings} from "@/shared/styles";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import {Image, Pressable, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {Dimensions} from "react-native";
 import {DataType} from "@/shared/data";
 import {Locate, MapPin, Timer} from "lucide-react-native";
@@ -10,7 +10,7 @@ const { width } = Dimensions.get("window");
 
 export default function ProductCard({data}: { data: DataType }){
     return(
-        <Pressable style={styles.container} onPress={()=>router.push({
+        <TouchableOpacity style={styles.container} onPress={()=>router.push({
             params: {id: data.id},
             pathname: '/details/[id]'
         })}>
@@ -31,15 +31,21 @@ export default function ProductCard({data}: { data: DataType }){
                     </View>
                 </View>
             </View>
-        </Pressable>
+        </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
     container : {
-        width: (width / 2) - 18,
+        flex: 1,
         height: 'auto',
         overflow: 'hidden',
+        backgroundColor: '#fff',
+        borderWidth: .5,
+        borderColor: Colors.borderColor,
+        borderRadius: 8,
+        padding: Spacings.padding/2,
+        gap: Spacings.padding,
     },
     image: {
         width: '100%',
@@ -47,9 +53,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
     },
     info: {
-        width: '100%',
-        paddingVertical: Spacings.padding / 2,
-        gap: 10
+        gap: 10,
     },
     cardHeader:{
 

@@ -23,7 +23,8 @@ export default function HomeScreen() {
             <View style={{
               backgroundColor: Colors.bgColor,
               flex: 1,
-              paddingBottom: 50
+              paddingBottom: 50,
+              paddingHorizontal: Spacings.containerPadding,
             }}>
               <FlatList
                 data={datas}
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    padding: Spacings.containerPadding/2,
+    paddingVertical: Spacings.containerPadding,
   },
   row:{
     justifyContent: 'space-between',
@@ -54,5 +55,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     gap: 15,
     paddingBottom: Spacings.padding,
+    width: '100%',
+
   }
 });

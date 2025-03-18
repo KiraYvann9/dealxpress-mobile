@@ -8,7 +8,7 @@ import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 import {Pressable} from "react-native";
-import {Cross, Plus, X} from "lucide-react-native";
+import {ChevronLeft, Cross, Plus, X} from "lucide-react-native";
 import {Colors} from "@/shared/styles";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -57,7 +57,7 @@ export default function RootLayout() {
           <Stack.Screen
             name={'category/index'}
             options={{
-              title: 'Categories',
+              title: 'Filtre',
               presentation: 'modal',
               headerTitleAlign: 'center',
               headerShadowVisible: false,
@@ -65,8 +65,63 @@ export default function RootLayout() {
                   <Pressable onPress={()=>router.back()}>
                     <X color={Colors.textColor}/>
                   </Pressable>
-              )
-        }} />
+              )}}
+          />
+          <Stack.Screen
+              name={'(auth)/login/index'}
+              options={{
+                  title: 'Connexion',
+                  presentation: 'fullScreenModal',
+                  headerTitleAlign: 'center',
+                  headerShadowVisible: false,
+                  headerLeft: ()=>(
+                      <Pressable onPress={()=>router.back()}>
+                          <ChevronLeft color={Colors.textColor} size={24}/>
+                      </Pressable>
+                  )}}
+          />
+          <Stack.Screen
+              name={'(auth)/register/index'}
+              options={{
+                  title: 'Créer un compte',
+                  presentation: 'fullScreenModal',
+                  animation: 'slide_from_right',
+                  headerTitleAlign: 'center',
+                  headerShadowVisible: false,
+                  headerLeft: ()=>(
+                      <Pressable onPress={()=>router.back()}>
+                          <ChevronLeft color={Colors.textColor} size={24}/>
+                      </Pressable>
+                  )}}
+          />
+          <Stack.Screen
+              name={'(auth)/register/verification/index'}
+              options={{
+                  title: 'Vérification',
+                  presentation: 'fullScreenModal',
+                  animation: 'slide_from_right',
+                  headerTitleAlign: 'center',
+                  headerShadowVisible: false,
+                  headerLeft: ()=>(
+                      <Pressable onPress={()=>router.back()}>
+                          <ChevronLeft color={Colors.textColor} size={24}/>
+                      </Pressable>
+                  )}}
+          />
+          <Stack.Screen
+              name={'(auth)/register/registration-done/index'}
+              options={{
+                  title: 'Vérification',
+                  presentation: 'fullScreenModal',
+                  animation: 'slide_from_right',
+                  headerTitleAlign: 'center',
+                  headerShadowVisible: false,
+                  headerLeft: ()=>(
+                      <Pressable onPress={()=>router.back()}>
+                          <ChevronLeft color={Colors.textColor} size={24}/>
+                      </Pressable>
+                  )}}
+          />
       </Stack>
       <StatusBar style="auto" />
     </>

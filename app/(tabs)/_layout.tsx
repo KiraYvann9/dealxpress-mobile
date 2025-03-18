@@ -44,8 +44,10 @@ export default function TabLayout() {
         <Tabs.Screen
         name="profile"
         options={{
-          title: 'Compte',
+          title: 'Mon compte',
           tabBarIcon: ({ color }) => <UserRound size={28} color={color} />,
+            headerTitleAlign: 'center',
+            headerShadowVisible: false,
         }}
       />
     </Tabs>
