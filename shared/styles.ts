@@ -9,6 +9,8 @@ const Colors = {
     inputBgColor: 'rgba(217, 217, 217, .25)',
     red: 'rgb(255, 66, 66)',
     green: '#13A931',
+    dark: '#181a20',
+    dark2: '#0b0f12'
 }
 
 const Spacings = {

@@ -11,20 +11,21 @@ import {ArrowLeftRight, Layers, UserRound} from 'lucide-react-native'
 import {Colors} from "@/shared/styles";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const colorScheme = useColorScheme() ?? 'light';
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors.textColor,
+        tabBarActiveTintColor: colorScheme==='dark'?Colors.yellow:Colors.dark,
         // headerShown: false,
         tabBarButton: HapticTab,
         tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
+
+
+          default: {
+              backgroundColor: colorScheme === 'dark'?Colors.dark:'#fff',
+              borderTopWidth: 0
           },
-          default: {},
         }),
       }}>
       <Tabs.Screen
