@@ -6,6 +6,7 @@ import {Box, Eye, FilePenLine, Plus, RefreshCw, Trash} from "lucide-react-native
 
 import {datas, DataType} from "@/shared/data";
 import {GestureHandlerRootView} from "react-native-gesture-handler";
+import { Link, router } from "expo-router";
 
 //const renderActions = () =>()
 
@@ -14,10 +15,14 @@ export default function SellScreen(){
         <View style={styles.container}>
             <View style={{flexDirection: 'row', alignItems: 'center', gap: Spacings.padding}}>
                 <Image source={boutiquePhoto} style={styles.profileImage}/>
-                <TouchableOpacity style={styles.addBtn}>
-                    <Plus color={Colors.textColor}/>
-                    <Text style={{fontSize: 16, color: Colors.textColor}}>Ajouter une anonce</Text>
-                </TouchableOpacity>
+
+                <Link href={'/(pages)/addproduct'} asChild>
+                    <Pressable style={styles.addBtn} >
+                        <Plus color={Colors.textColor}/>
+                        <Text style={{fontSize: 16, color: Colors.textColor}}>Ajouter une anonce</Text>
+                    </Pressable>
+                </Link>
+                
             </View>
             <View style={{marginTop: Spacings.padding*2, gap: Spacings.padding}}>
                 <Text style={{fontSize: 18, fontWeight: '500'}}>Aperçu</Text>

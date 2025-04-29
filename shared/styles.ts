@@ -1,6 +1,4 @@
 
-
-
 const Colors = {
     yellow : '#FFD402',
     textColor: '#122337',

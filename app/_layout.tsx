@@ -10,6 +10,7 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import {Pressable} from "react-native";
 import {ChevronLeft, Cross, Plus, X} from "lucide-react-native";
 import {Colors} from "@/shared/styles";
+import React from 'react';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -121,6 +122,12 @@ export default function RootLayout() {
                           <ChevronLeft color={Colors.textColor} size={24}/>
                       </Pressable>
                   )}}
+          />
+          <Stack.Screen name={'(pages)/addproduct/index'}
+            options={{
+              title: 'Nouvel Article',
+              headerShadowVisible: false
+            }}
           />
       </Stack>
       <StatusBar style="auto" />
