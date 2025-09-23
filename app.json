@@ -38,7 +38,6 @@
         "expo-font",
         {
           "fonts": [
-            
             "./assets/fonts/Poppins-Bold.ttf",
             "./assets/fonts/Poppins-Light.ttf",
             "./assets/fonts/Poppins-LightItalic.ttf",
@@ -48,8 +47,8 @@
             "./assets/fonts/Poppins-Thin.ttf"
           ]
         }
-
-      ]
+      ],
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true

@@ -1,10 +1,11 @@
-import {FlatList, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {FlatList, Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import {categoryDataType, categoryData} from "@/shared/category-data";
 import {Colors, Spacings} from "@/shared/styles";
 
 export default function CategoryScreen() {
     return(
-        <SafeAreaView style={{flex: 1}}>
+        <SafeAreaView style={{flexGrow: 1}}>
             <View style={styles.container}>
                 {/*
                 <Text style={{fontSize: 20, fontWeight: '600'}}>Visitez nos catégories</Text>

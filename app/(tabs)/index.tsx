@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Platform, View, SafeAreaView, FlatList} from 'react-native';
+import {Image, StyleSheet, Platform, View, FlatList} from 'react-native';
 
 
 import { Tabs } from 'expo-router';

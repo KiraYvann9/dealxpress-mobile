@@ -4,8 +4,19 @@ import {Colors, Dimension, Spacings} from "@/shared/styles";
 import logo from '@/assets/images/icon.png'
 import {Link} from "expo-router";
 
+import { useMutation } from "@tanstack/react-query";
 
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Controller, useForm } from "react-hook-form";
+import { z } from "zod";
+
+const schema = z.object({
+    username: z.string(),
+    password: z.string(),
+})
 export default function LoginScreen(){
+
+    const {} = useForm();
     return(
         <View style={styles.container}>
             <View style={styles.logoContainer}>
