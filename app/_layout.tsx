@@ -11,6 +11,7 @@ import {Pressable} from "react-native";
 import {ChevronLeft, Cross, Plus, X} from "lucide-react-native";
 import {Colors} from "@/shared/styles";
 import React from 'react';
+import {QueryProvider} from "@/components/QueryProvider";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -32,7 +33,7 @@ export default function RootLayout() {
   }
 
   return (
-    <>
+    <QueryProvider>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
@@ -130,7 +131,7 @@ export default function RootLayout() {
             }}
           />
       </Stack>
-      <StatusBar style="auto" />
-    </>
+      <StatusBar style="auto" backgroundColor={"#fff"} />
+    </QueryProvider>
   );
 }

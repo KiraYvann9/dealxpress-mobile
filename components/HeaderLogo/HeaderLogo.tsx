@@ -4,7 +4,7 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import SearchComponent from "@/components/SearchComponent/SearchComponent";
 import {Link, router} from "expo-router";
 
-export default function HeaderLogo(){
+export const Header =()=>{
     return(
         <View style={styles.container}>
             <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
