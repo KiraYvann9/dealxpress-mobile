@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/dealxpress-front.iml" filepath="$PROJECT_DIR$/.idea/dealxpress-front.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/dealxpress-mobile.iml" filepath="$PROJECT_DIR$/.idea/dealxpress-mobile.iml" />
     </modules>
   </component>
 </project>

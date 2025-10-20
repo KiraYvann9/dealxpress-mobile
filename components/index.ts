@@ -1,3 +1,4 @@
-import {Header} from './HeaderLogo/HeaderLogo'
+import {Header} from './HeaderLogo/HeaderComponent'
+import {SearchComponent} from "@/components/SearchComponent/SearchComponent";
 
-export {Header}
+export {Header, SearchComponent}

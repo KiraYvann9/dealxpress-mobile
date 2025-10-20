@@ -17,14 +17,14 @@ export default function TabLayout() {
         <>
             <Tabs
                 screenOptions={{
-                    tabBarActiveTintColor: colorScheme === 'dark' ? Colors.yellow : Colors.dark,
+                    tabBarActiveTintColor: Colors.dark,
                     // headerShown: false,
                     // tabBarButton: HapticTab,
                     tabBarStyle: Platform.select({
 
 
                         default: {
-                            backgroundColor: colorScheme === 'dark' ? Colors.dark : '#fff',
+                            backgroundColor: '#fff',
                             borderTopWidth: 0
                         },
                     }),
@@ -39,7 +39,7 @@ export default function TabLayout() {
                     }}
                 />
                 <Tabs.Screen
-                    name="sell"
+                    name="(sell)"
                     options={{
                         title: 'Vendre',
                         tabBarIcon: ({color}) => <ArrowLeftRight size={28} color={color}/>,
@@ -47,7 +47,7 @@ export default function TabLayout() {
                     }}
                 />
                 <Tabs.Screen
-                    name="profile"
+                    name="profile/index"
                     options={{
                         title: 'Mon compte',
                         tabBarIcon: ({color}) => <UserRound size={28} color={color}/>,

@@ -1,13 +1,12 @@
 import { Colors, Fonts, Spacings } from "@/shared/styles";
 import { Bell } from "lucide-react-native";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import SearchComponent from "@/components/SearchComponent/SearchComponent";
 import {Link, router} from "expo-router";
 
 export const Header =()=>{
     return(
         <View style={styles.container}>
-            <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%'}}>
+            <View style={{flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', width: '100%'}}>
                 <View style={styles.logoContainer}>
                     <Image source={require('@/assets/images/icon.png')} style={styles.image} />
                     <Text style={styles.text}>dealxpress</Text>
@@ -16,7 +15,6 @@ export const Header =()=>{
                     <Bell size={24} color={Colors.textColor}/>
                 </Link>
             </View>
-            <SearchComponent/>
         </View>
     )
 }
@@ -24,12 +22,14 @@ export const Header =()=>{
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        flexDirection: 'column',
+        height: 100,
         gap: 21,
-        alignItems: 'center',
-        paddingVertical: 30,
-        backgroundColor: '#fff',
+        alignItems: 'flex-end',
+        justifyContent: 'flex-end',
+        paddingBottom: 10,
+        backgroundColor: '#ffffff',
         padding: Spacings.containerPadding,
+
     },
     logoContainer: {
         flexDirection: 'row', 

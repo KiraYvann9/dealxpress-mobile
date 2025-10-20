@@ -3,7 +3,7 @@ import {Colors, Dimension, Spacings} from "@/shared/styles";
 import {Link, router} from "expo-router";
 import {SlidersHorizontal} from "lucide-react-native";
 
-export default function SearchComponent(){
+export const SearchComponent = ()=>{
     return (
         <View style={styles.container}>
             <TextInput style={styles.input} placeholder={'iPhone 11, Macbook, Samsung,...'}/>

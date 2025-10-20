@@ -12,7 +12,7 @@ export default function TabTwoScreen() {
             <Text style={styles.title}>Qui va là ?</Text>
             <Text style={styles.description}>Identifiez-vous pour vendre vos article neufs/seconde main en toute sécurité en toute sécurité.</Text>
           </View>
-          <Link href={'/(auth)/login'} asChild>
+          <Link href={'/(auth)'} asChild>
             <Pressable style={styles.loginBtn} >
               <Text style={{color: '#fff', fontWeight: '700'}}>Se connecter</Text>
             </Pressable>

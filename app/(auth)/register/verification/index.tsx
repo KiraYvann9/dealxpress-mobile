@@ -48,7 +48,7 @@ export default function VerificationScreen() {
 
             // Vérification via Supabase Auth (SMS OTP)
             const {data, error} = await supabase.auth.verifyOtp({
-                phone: phone!,
+                phone: '+'+phone!,
                 token: code,
                 type: 'sms',
                 options: { redirectTo: undefined }
@@ -59,16 +59,19 @@ export default function VerificationScreen() {
 
             console.log('DATA: ', data)
             console.log('USER: ', user)
-            /*if (user) {
+            if (user) {
                 const {} = await supabase
                     .from('users')
                     .insert([
                         { id: user.id,
-                            phone_number: user.phone,
-                            whatsapp_number: user.phone,
-                            full_name: user.user_metadata.full_name},
+                            phone_number: user.user_metadata.phone_number,
+                            whatsapp_number: user.user_metadata.whatsapp_number,
+                            full_name: user.user_metadata.full_name,
+                            is_verified: user.user_metadata.phone_verified,
+                        },
+
                     ])
-            }*/
+            }
 
             return data
         } catch (e: any) {
@@ -105,7 +108,8 @@ export default function VerificationScreen() {
             router.push('/(auth)/register/registration-done')
         },
         onError: (error: any) => {
-            Alert.alert('Vérification', error?.message || 'Une erreur est survenue')
+            if(error.status === 403 && error.code === 'otp_expired') Alert.alert('Erreur de vérification', 'OTP expiré ou incorrecte')
+
         }
     })
 

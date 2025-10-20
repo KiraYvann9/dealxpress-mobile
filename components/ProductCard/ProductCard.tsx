@@ -14,7 +14,7 @@ export default function ProductCard({data}: { data: DataType }){
             params: {id: data.id},
             pathname: '/details/[id]'
         })}>
-            <Animated.Image source={data.imgUrl} style={styles.image} sharedTransitionTag={'productTransitionTag'}/>
+            <Animated.Image source={data.imgUrl} style={styles.image} />
             <View style={styles.info}>
                 <View style={styles.cardHeader}>
                     <Text style={{fontFamily: Fonts.poppinsSemiBold}}>FCFA 470.000</Text>
@@ -43,14 +43,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderWidth: .5,
         borderColor: Colors.borderColor,
-        borderRadius: 8,
+        // borderRadius: 8,
         padding: Spacings.padding/2,
         gap: Spacings.padding,
     },
     image: {
         width: '100%',
         resizeMode: 'cover',
-        borderRadius: 8,
     },
     info: {
         gap: 10,

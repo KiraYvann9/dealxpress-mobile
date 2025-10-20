@@ -58,8 +58,15 @@ export default function LoginScreen() {
     }
 
     return (
-        <ScrollView style={{flex:1, backgroundColor: '#fff'}} contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps="handled">
-            <KeyboardAvoidingView style={{flex:1}} behavior={Platform.OS === 'ios' ? 'padding' : 'height'} keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 100}>
+        <KeyboardAvoidingView
+            style={{flex: 1}}
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+        >
+            <ScrollView
+                style={{ backgroundColor: "#fff", flex: 1, height: "100%" }}
+                contentContainerStyle={{ flexGrow: 1, justifyContent: "flex-end" }}
+                keyboardShouldPersistTaps="handled"
+            >
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
                     <View style={styles.container}>
                         <View style={styles.logoContainer}>
@@ -74,6 +81,7 @@ export default function LoginScreen() {
                                 render={({field: {onBlur, onChange, value}}) => (
                                     <TextInput
                                         placeholderTextColor="gray"
+                                        keyboardType={'number-pad'}
                                         value={value}
                                         onBlur={onBlur}
                                         onChangeText={onChange}
@@ -104,15 +112,24 @@ export default function LoginScreen() {
                             </TouchableOpacity>
 
                         </View>
-                        <View style={{width: '100%', flexDirection: 'row', justifyContent: 'space-between'}}>
-                            <Pressable><Text>Avec N° Téléphone</Text></Pressable>
+
+                        <Link href={'/register'} asChild>
+                            <Pressable style={styles.registerBtn}>
+                                <Text style={{fontSize: 18, fontWeight: '700', color: '#fff'}}>Créer un compte</Text>
+                            </Pressable>
+                        </Link>
+
+
+                        <View style={{width: '100%', flexDirection: 'row', justifyContent: 'space-between', marginTop: 30}}>
                             <Link href={'/'}><Text>Mot de passe oublié</Text></Link>
                         </View>
-                        <View>
-                            <Link href={'/(auth)/register'}><Text>Créer un compte</Text></Link>
+
+                        <View style={{width: '100%', position: 'relative', justifyContent: 'center', alignItems: 'center'}}>
+                            <View style={{position: 'absolute', height: 1, width: '100%', backgroundColor: Colors.inputBgColor}}/>
+                            <Text style={{backgroundColor: '#fff', height: 'auto', width: 'auto', alignItems:"center"}}>Ou</Text>
                         </View>
 
-                        {/*<AppleAuthButton/>*/}
+                        <AppleAuthButton/>
 
                         <View style={{marginTop: 'auto'}}>
                             <Text style={{textAlign: 'center', fontSize: 12, fontWeight: '400'}}>From</Text>
@@ -120,8 +137,8 @@ export default function LoginScreen() {
                         </View>
                     </View>
                 </TouchableWithoutFeedback>
-            </KeyboardAvoidingView>
-        </ScrollView>
+            </ScrollView>
+        </KeyboardAvoidingView>
     )
 }
 
@@ -131,7 +148,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         padding: Spacings.containerPadding,
         alignItems: 'center',
-        gap: 57
+        gap: 10
     },
     logoContainer: {
         flexDirection: 'column',
@@ -147,6 +164,7 @@ const styles = StyleSheet.create({
     form: {
         width: '100%',
         gap: Spacings.padding,
+        marginTop: 30,
     },
     input: {
         height: Dimension.inputHeight,
@@ -155,6 +173,8 @@ const styles = StyleSheet.create({
         borderColor: Colors.borderColor,
         borderRadius: 4,
         paddingHorizontal: Spacings.padding,
+        fontSize: 18,
+        fontWeight: '500',
     },
     loginBtn: {
         height: Dimension.buttonHeight,
@@ -162,5 +182,13 @@ const styles = StyleSheet.create({
         borderRadius: 4,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    registerBtn: {
+        height: Dimension.buttonHeight,
+        backgroundColor: Colors.dark,
+        borderRadius: 4,
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
     }
 })

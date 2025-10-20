@@ -16,7 +16,7 @@ export default function SellScreen(){
             <View style={{flexDirection: 'row', alignItems: 'center', gap: Spacings.padding}}>
                 <Image source={boutiquePhoto} style={styles.profileImage}/>
 
-                <Link href={'/(pages)/addproduct'} asChild>
+                <Link href={'./addproduct'} asChild>
                     <Pressable style={styles.addBtn} >
                         <Plus color={Colors.textColor}/>
                         <Text style={{fontSize: 16, color: Colors.textColor}}>Ajouter une anonce</Text>

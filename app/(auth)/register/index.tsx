@@ -75,7 +75,6 @@ export default function RegisterScreen(){
             return { phone: user.phone, user_id: user.id }
         },
         onSuccess: ({phone, user_id}) => {
-
             router.push({ pathname: '/(auth)/register/verification', params: { phone, user_id } })
         },
         onError: (error: any) => {
@@ -86,11 +85,14 @@ export default function RegisterScreen(){
     const onSubmit = (values: FormValues) => mutation.mutate(values)
 
     return(
-        <ScrollView style={{flex:1, backgroundColor: '#fff'}} contentContainerStyle={{flexGrow: 1}} keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false}>
-            <KeyboardAvoidingView
-                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-                style={{flex: 1}}
-                keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 100}
+        <KeyboardAvoidingView
+            style={{flex: 1}}
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+        >
+            <ScrollView
+                style={{ backgroundColor: "#fff", flex: 1, height: "100%" }}
+                contentContainerStyle={{ flexGrow: 1, justifyContent: "flex-end" }}
+                keyboardShouldPersistTaps="handled"
             >
                 <Pressable style={{flex:1}} onPress={() => Keyboard.dismiss()}>
                     <View style={styles.container}>
@@ -134,7 +136,6 @@ export default function RegisterScreen(){
 
                     </View>
                     <View style={{width: '100%', flexDirection: 'row', justifyContent: 'space-between'}}>
-                        <Pressable onPress={()=>router.back()}><Text>Se connecter</Text></Pressable>
                         <Link href={'/(tabs)'}><Text>Retour à l'accueil</Text></Link>
 
                     </View>
@@ -146,8 +147,8 @@ export default function RegisterScreen(){
                     </View>
                 </View>
                 </Pressable>
-            </KeyboardAvoidingView>
-        </ScrollView>
+            </ScrollView>
+        </KeyboardAvoidingView>
     )
 }
 
@@ -181,6 +182,8 @@ const styles = StyleSheet.create({
         borderColor: Colors.borderColor,
         borderRadius: 4,
         paddingHorizontal: Spacings.padding,
+        fontSize: 18,
+        fontWeight: '500',
     },
     loginBtn:{
         height: Dimension.buttonHeight,
